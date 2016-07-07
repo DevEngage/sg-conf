@@ -1,2 +1,2 @@
 export * from './environment';
-export * from './means-stack.component';
+export * from './app.component';

@@ -16,6 +16,10 @@
     "inlineSources": true
   },
 
+  "filesGlob": [
+    "./**/*.ts"
+  ],
+
   "files": [
     "main.ts",
     "typings.d.ts"
