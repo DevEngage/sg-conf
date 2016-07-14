@@ -1,17 +1,23 @@
 <!doctype html>
 <html>
 
-<head>
+<head lang="en">
   <meta charset="utf-8">
-  <title>SG-CONF</title>
+  <meta name="description" content="Southern Utah's only technology conference focusing on developers and designers - St George, Utah">
+
   <base href="/">
   <!--<script src="vendor/socket.io-client/socket.io.js"></script>-->
   {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
   {{/unless}}
 
+  <title>SG-CONF | St George, Utah Technology Conference and Hack-a-thon</title>
+
   <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/loader.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="apple-touch-icon" sizes="57x57" href="assets/icon/apple-icon-57x57.png">
@@ -31,16 +37,30 @@
   <meta name="msapplication-TileColor" content="#008080">
   <meta name="msapplication-TileImage" content="assets/icon/ms-icon-144x144.png">
   <meta name="theme-color" content="#008080">
-
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
 
 <body>
-  <conf-app>Loading...</conf-app>
+
+  <!-- called from app.component.ts -->
+  <conf-app>
+    <div class="page-loader">
+      <div class="loader"></div>
+    </div>
+  </conf-app>
 
 
 
+
+  <!-- SCRIPTS go here  -->
   {{#each scripts.polyfills}}
   <script src="{{.}}"></script>{{/each}}
   <script>
@@ -48,10 +68,6 @@
       System.import('main');
     }).catch(console.error.bind(console));
   </script>
-
-
-
-
 
 </body>
 
